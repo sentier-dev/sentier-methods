@@ -1,0 +1,25 @@
+# Schema for normalization-weighting.parquet — optional per-category
+# normalization and weighting sets. Joined to methods.parquet on method_id.
+
+table: normalization-weighting
+file: normalization-weighting.parquet
+foreign_key:
+  method_id: methods.method_id
+description: Normalization and weighting factors per impact category.
+
+columns:
+  - name: method_id
+    type: string
+    required: true
+    description: FK -> methods.method_id.
+  - name: impact_category
+    type: string
+    required: true
+  - name: normalization
+    type: double
+    required: false
+    description: Per-category normalization factor.
+  - name: weighting
+    type: double
+    required: false
+    description: Per-category weighting factor.

@@ -1,0 +1,10 @@
+# Shared definitions reused by the methods parquet schemas.
+# Plain YAML — each schema file describes one parquet table and its columns.
+
+# No enums required yet for methods.
+# Column types used across schemas: string | double | int | date
+
+notes: >
+  Methods flatten the LCIA model into a parent table (methods) keyed by
+  (method, impact category) and a long CF table (characterization-factors)
+  joined on method_id. Normalization & weighting sets are optional.

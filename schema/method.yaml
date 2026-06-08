@@ -1,0 +1,46 @@
+# Schema for methods.parquet — one row per (method, impact category).
+# Characterization factors live in characterization-factors.parquet, joined on
+# method_id.
+
+table: methods
+file: methods.parquet
+primary_key: method_id
+description: LCIA methods, one row per impact category.
+
+columns:
+  - name: method_id
+    type: string
+    required: true
+    description: Stable id `<datasource>:<impact_category>`. Primary key.
+  - name: method_name
+    type: string
+    required: true
+    description: Method name (e.g. "EF v3.1").
+  - name: impact_category
+    type: string
+    required: true
+    description: Impact category (e.g. "climate change").
+  - name: indicator
+    type: string
+    required: false
+    description: Indicator within the category (e.g. "GWP100").
+  - name: unit
+    type: string
+    required: true
+    description: Reference unit (e.g. "kg CO2-Eq").
+  - name: methodology
+    type: string
+    required: false
+    description: Framework / family.
+  - name: source
+    type: string
+    required: false
+    description: Citation or URL.
+  - name: valid_from
+    type: date
+    required: false
+    description: Date from which this method is valid.
+  - name: datasource
+    type: string
+    required: true
+    description: Lower-kebab datasource id (e.g. ef-3.1).

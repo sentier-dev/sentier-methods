@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://data.sentier.dev/methods/schema/metadata",
+  "title": "Sentier methods datasource metadata",
+  "description": "Provenance file (metadata.json) carried by each data/<NN>-<datasource>/ folder.",
+  "type": "object",
+  "required": ["datasource", "title", "version", "rank", "schema_version"],
+  "additionalProperties": true,
+  "properties": {
+    "datasource": { "type": "string", "description": "Lower-kebab id, e.g. ef-3.1." },
+    "title": { "type": "string" },
+    "publisher": { "type": "string" },
+    "version": { "type": "string" },
+    "license": { "type": "string" },
+    "retrieved": { "type": "string", "format": "date" },
+    "source_url": { "type": "string" },
+    "rank": { "type": "integer", "minimum": 1, "description": "Resolution precedence; lower wins." },
+    "schema_version": { "type": "string" },
+    "row_counts": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    }
+  }
+}

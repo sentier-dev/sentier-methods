@@ -1,0 +1,42 @@
+# Schema for characterization-factors.parquet — one row per CF.
+# Joined to methods.parquet on method_id.
+
+table: characterization-factors
+file: characterization-factors.parquet
+foreign_key:
+  method_id: methods.method_id
+description: Characterization factors keyed by elementary flow.
+
+columns:
+  - name: method_id
+    type: string
+    required: true
+    description: FK -> methods.method_id.
+  - name: impact_category
+    type: string
+    required: true
+    description: Denormalized for direct joins to flows.
+  - name: flow
+    type: string
+    required: true
+    description: Elementary-flow id. Links to inventory flows via sentier-mappings.
+  - name: flow_name
+    type: string
+    required: true
+    description: Human-readable flow name.
+  - name: flow_context
+    type: string
+    required: false
+    description: Compartment / subcompartment.
+  - name: factor_value
+    type: double
+    required: true
+    description: The characterization factor.
+  - name: unit
+    type: string
+    required: true
+    description: CF unit.
+  - name: location
+    type: string
+    required: false
+    description: Regionalized CFs. Nullable.

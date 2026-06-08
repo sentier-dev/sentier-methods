@@ -1,0 +1,12 @@
+{
+  "datasource": "ef-3.1",
+  "title": "Environmental Footprint 3.1",
+  "publisher": "European Commission",
+  "version": "3.1",
+  "license": null,
+  "retrieved": null,
+  "source_url": null,
+  "rank": 1,
+  "schema_version": "0.1.0",
+  "row_counts": {}
+}

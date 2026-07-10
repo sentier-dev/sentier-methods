@@ -3,10 +3,13 @@
   "title": "Environmental Footprint 3.1",
   "publisher": "European Commission",
   "version": "3.1",
-  "license": null,
+  "license": "https://commission.europa.eu/legal-notice_en (EC reuse)",
   "retrieved": null,
-  "source_url": null,
+  "source_url": "https://eplca.jrc.ec.europa.eu/LCDN/EF.xhtml",
   "rank": 1,
   "schema_version": "0.1.0",
-  "row_counts": {}
+  "row_counts": {
+    "methods": 25,
+    "characterization-factors": 319393
+  }
 }

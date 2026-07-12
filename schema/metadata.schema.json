@@ -9,11 +9,11 @@
   "properties": {
     "datasource": { "type": "string", "description": "Lower-kebab id, e.g. ef-3.1." },
     "title": { "type": "string" },
-    "publisher": { "type": "string" },
+    "publisher": { "type": ["string", "null"] },
     "version": { "type": "string" },
-    "license": { "type": "string" },
-    "retrieved": { "type": "string", "format": "date" },
-    "source_url": { "type": "string" },
+    "license": { "type": ["string", "null"] },
+    "retrieved": { "type": ["string", "null"], "format": "date" },
+    "source_url": { "type": ["string", "null"] },
     "rank": { "type": "integer", "minimum": 1, "description": "Resolution precedence; lower wins." },
     "schema_version": { "type": "string" },
     "row_counts": {
